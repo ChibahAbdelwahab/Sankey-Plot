@@ -20,11 +20,9 @@
         count: 1000,
         hue: 'random'
     });
-
-    d3.csv("users.out",
+    d3.csv("https://raw.githubusercontent.com/ChibahAbdelwahab/Sankey-Plot/master/users.out",
         function (users) {
-            console.log(users)
-            d3.csv('links.out',
+            d3.csv('https://raw.githubusercontent.com/ChibahAbdelwahab/Sankey-Plot/master/links.out',
                 function (row) {
                     return {
                         source: row.source,
@@ -38,8 +36,7 @@
                     };
                 },
                 function (links) {
-                    console.log(links)
-                    d3.csv('groups.out',
+                    d3.csv('https://raw.githubusercontent.com/ChibahAbdelwahab/Sankey-Plot/master/groups.out',
                         function (row) {
                             return {
                                 name: row[""],
@@ -53,12 +50,10 @@
                                 itemStyle: {
                                     color: 'rgb(27,120,0)',
                                 }
-
                             };
                         },
                         function (data) {
-                            console.log(data)
-                            d3.json('stats.out',
+                            d3.json('https://raw.githubusercontent.com/ChibahAbdelwahab/Sankey-Plot/master/stats.out',
                                 function (all_stats) {
                                     console.log(all_stats)
                                     var stats = []
